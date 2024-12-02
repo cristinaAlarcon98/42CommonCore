@@ -1,4 +1,4 @@
-# CommonCore42London
+# 42LCommonCore
 
 The 42 Common Core started in Paris in 2013 and has been evolving ever since. The program challenges students to complete projects and earn points to level up as they go.
 
