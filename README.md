@@ -1,5 +1,5 @@
 # CommonCore42London
 
-The 42 Common Core program started in Paris back in 2013 and has been constantly updated and refined ever since. Students move forward by completing projects and earning points, which help them level up.
+The 42 Common Core started in Paris in 2013 and has been evolving ever since. The program challenges students to complete projects and earn points to level up as they go.
 
-This repository contains code from my time at 42 Porto’s Common Core, starting on November 26, 2024. The first few projects are written in C, with plans to transition into C++ later on.
+In this repository, you’ll find the code I’ve been working on since I started at 42 London’s Common Core on November 26, 2024. I’m always improving the code and adding new projects. The first ones are written in C, and I’ll be moving into C++ as I progress.
