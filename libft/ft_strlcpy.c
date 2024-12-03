@@ -16,7 +16,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	counter;
+	size_t	counter;
 
 	counter = 0;
 	if (size == 0)
