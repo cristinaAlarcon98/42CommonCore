@@ -1,0 +1,6 @@
+Notes for the future:
+
+strlcpy ans strlcat: size = size of the dest buffer
+
+flag to detect errors: -fsanitize=address
+
