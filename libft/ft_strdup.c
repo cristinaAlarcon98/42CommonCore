@@ -45,7 +45,6 @@ char *ft_strdup(const char *s1)
     return(s2);
 
 }
-
 /*
 int main()
 {
@@ -55,5 +54,4 @@ int main()
     printf("%s\n", s2);
     free(s2);
 }
-
 */
