@@ -23,7 +23,7 @@ int	ft_strlen(const char *s)
 	}
 	return (length);
 }
-
+/*
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;

@@ -43,7 +43,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		haystack++;
 		len--;
 	}
-	return (NULL);
+	return (0);
 }
 
 
@@ -54,8 +54,10 @@ int main(){
     const char *h2 = "hello";
     const char *n2 = "ert";
 
+	
+		printf("%s\n",  ft_strnstr(h1,n1,4));
 
-    printf("%d\n",  ft_strnstr(h1,n1,4));
+	
 
 //    printf("%s\n",  strnstr(h2,n2,3));
 }
