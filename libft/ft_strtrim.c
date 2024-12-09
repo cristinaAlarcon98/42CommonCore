@@ -24,34 +24,51 @@ int	ft_strlen(const char *s)
 	}
 	return (length);
 }
+int	ft_strlen(const char *s)
+{
+	int	length;
+
+	length = 0;
+	while (s[length] != 0)
+	{
+		length++;
+	}
+	return (length);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	int		i;
+	char	*s2;
+
+	i = 0;
+	malloc((size_t)ft_strlen(s1)+ 1);
+	if (!s2)
+	{
+		return (NULL);
+	}
+	while (s1[i])
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		trimletter;
-	char	*s1cpy_pointer;
-	char	*set_pointer;
-	char	*s1cpy;
+	size_t	beggining;
+	size_t	end;
 
-	s1cpy = malloc(ft_strlen(s1) + 1);
-	if (!s1cpy)
+	if (!s1)
 		return (NULL);
-	s1cpy_pointer = s1cpy;
-	while (*s1)
-	{
-		trimletter = 0;
-		set_pointer = (char *)set;
-		while (*set_pointer)
-		{
-			if (*s1 == *set_pointer)
-				trimletter = 1;
-			set_pointer++;
-		}
-		if (!trimletter)
-			*s1cpy_pointer++ = *s1;
-		s1++;
-	}
-	*s1cpy_pointer = '\0';
-	return (s1cpy);
+	if(!set)
+		return(ft_strdup(s1));
+	
+
+
 }
 /*
 int main()
