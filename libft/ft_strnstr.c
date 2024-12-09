@@ -6,7 +6,7 @@
 /*   By: cralarco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:52:40 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/06 20:49:56 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:31:54 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-
+/*
 int main(){
     const char *h1 = "hello";
     const char *n1 = "rrrr";
@@ -61,3 +61,4 @@ int main(){
 
 //    printf("%s\n",  strnstr(h2,n2,3));
 }
+*/

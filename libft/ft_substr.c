@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:38 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/06 13:53:46 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:40:51 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char *substr = malloc(len + 1);
-    int i;
-    
-    i = 0;
-    if(!substr)
-        return(NULL);
-    while (i < len)
-    {
-        substr[i] = s[start + i];
-        i++;
-        
-    }
-    substr[i] = '\0';
-    return (substr);
+	char	*substr;
+	int		i;
+
+	i = 0;
+	*substr = malloc(len + 1);
+	if (!substr)
+		return (NULL);
+	while (i < len)
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = '\0';
+	return (substr);
 }
 
 /*

@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 19:40:57 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/28 20:04:16 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:24:52 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <string.h>
 #include <stdio.h>
@@ -27,23 +26,24 @@ int	ft_strlen(const char *s)
 	return (length);
 }
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    int i;
-    char *s2 = malloc((size_t)ft_strlen(s1)+ 1);
-    
-    i = 0;
-    if(!s2){
-        return NULL;
-    }
-    while (s1[i])
-    {
-        s2[i] = s1[i];
-        i++;
-    }
-    s2[i] = '\0';
-    return(s2);
+	int		i;
+	char	*s2;
 
+	i = 0;
+	malloc((size_t)ft_strlen(s1)+ 1);
+	if (!s2)
+	{
+		return (NULL);
+	}
+	while (s1[i])
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
 }
 /*
 int main()

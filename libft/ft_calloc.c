@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 19:40:57 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/28 20:04:16 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/09 11:34:21 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*string;
 	int		i;
+	char	*string;
 
 	string = (void *)s;
 	i = 0;
@@ -26,17 +26,18 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-void *ft_calloc(size_t count, size_t size)
-{
-    void *pointer;
-    int total_size;
 
-    total_size = count * size;
-    pointer = malloc(total_size);
-    if(pointer == NULL)
-        return (NULL);
-    ft_bzero(pointer, total_size);
-    return (pointer);
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*pointer;
+	int		total_size;
+
+	total_size = count * size;
+	pointer = malloc(total_size);
+	if (pointer == NULL)
+		return (NULL);
+	ft_bzero(pointer, total_size);
+	return (pointer);
 }
 /*
 int main()
