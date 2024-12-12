@@ -12,20 +12,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	int		i;
-	char	*string;
 
-	string = (void *)s;
-	i = 0;
-	while (i < n)
-	{
-		string[i] = 0;
-		i++;
-	}
-}
 
 void	*ft_calloc(size_t count, size_t size)
 {

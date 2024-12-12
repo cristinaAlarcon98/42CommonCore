@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:50:30 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/26 16:34:52 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:10:53 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
+#include <unistd.h>
 
-
-int     countword(char *str, char delimiter)
+int	count_words(char const *str, char delimiter)
 {
     int counter;
     int i;
@@ -32,27 +32,23 @@ int     countword(char *str, char delimiter)
             word_flag = 0;
         }
         else if(str[i] != delimiter && word_flag == 0)
-        {
             word_flag = 1;
-        }
         str++;
     }
-    
     if (word_flag)
-    {
         counter++;
-    }
-
     return counter;
 }
 
-static  void copy_text_in_result(char *str, int start, int end,char **result)
+static  void copy_text_in_result(char const *str, int start, int end,char **result)
 {
     int i;
-    while(!result[i])
+
+    i = 0;
+    while(result[i])
         i++;
     result[i] = malloc(sizeof(char) * (end - start + 2));
-    ft_strlcpy(result[i], &str[start], start - end + 1);
+    ft_strlcpy(result[i], &str[start], end - start + 1);
 }
 
 
@@ -60,69 +56,55 @@ char **ft_split(char const *s, char c)
 {
     char **result;
     size_t start;
-    size_t end;
-    int count;
-    int flag;
-    int i;
+    int words_number;
+    int word_flag;
+    int index;
     
+
     start = 0;
-    end = 0;
     if(!s)
         return (NULL);
-    count = countword(*s, c);
-    result = calloc( (count + 1), sizeof(char *));
+    words_number = count_words(s, c);
+    result = ft_calloc( (words_number + 1), sizeof(char *));
 
-    i = 0;
-    while(!s[i])
+    index = 0;
+    word_flag = 0;
+    while(s[index])
     {
-        if((s[i] == c || s[i]=='\0') && flag == 1)
+        if(s[index] == c && word_flag == 1)
         {
-            copytext(s, start, i, result);
-            flag = 0;
+            copy_text_in_result(s, start, index, result);
+            word_flag = 0;
         }
-        else if(s[i] != c && flag==0)
+        else if(s[index] != c && word_flag==0)
         {
-            flag = 1;
-            start = i;
+            word_flag = 1;
+            start = index;
         }
-        i++;        
+        index++;
+		
     }
+    if(s[index] == '\0')
+	    copy_text_in_result(s, start, index, result);
     return result;
-
-
-    // while(s[len1] && s[len1] != c)
-    // {
-    //     len1++;
-    // }
-    // s1 = malloc(len1 + 1);
-    // if(!s1)
-    //     return(NULL);
-    // s1 = ft_substr(s,0,len1);
-    // len2 = len1 + 1;
-    // /*while(s[len2] && s[len2] != c)
-    // {
-    //     len2++;
-    // }*/
-    // s2 = malloc(ft_strlen(s1) - len1);
-    // if(!s2)
-    //     return(NULL);
-    // s2 = ft_substr(s,0,len2);
 
 }
 
 int main()
 {
-    char const *s = "    cristina  banana     cafe   ";
+    char const *s = " cristina  banana     cafe";
     char **result;
     int i = 0;
 
-    result = ft_split(s, 't');
-    while(!result && !result[i])
+    result = ft_split(s, ' ');
+    while(result[i])
     {
         printf("%s\n", result[i]);
         i++;
+        //free(result[i]);
 
     }    
+    free(result);
     /*
     printf("%s\n", result[0]);
     printf("%s\n", result[1]);
@@ -131,5 +113,5 @@ int main()
 
 
 
-
 }
+
