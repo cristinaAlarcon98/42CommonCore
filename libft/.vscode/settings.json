@@ -2,5 +2,12 @@
     "files.associations": {
         "stdio.h": "c",
         "libft.h": "c"
-    }
+    },
+    "editor.tabSize": 4,           // Ancho visual del tabulador
+    "editor.insertSpaces": false, // Inserta un carácter de tabulación (\t) en lugar de espacios
+    "editor.detectIndentation": false ,// Desactiva la detección automática del tamaño del tabulador
+	"[c]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+}
 }

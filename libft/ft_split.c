@@ -34,7 +34,7 @@ int	count_words(char const *str, char delimiter)
         else if(str[i] != delimiter && word_flag == 0)
             word_flag = 1;
         str++;
-    }
+	  }
     if (word_flag)
         counter++;
     return counter;
