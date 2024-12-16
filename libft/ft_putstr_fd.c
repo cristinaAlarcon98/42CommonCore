@@ -12,15 +12,15 @@
 
 #include <unistd.h>	
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	while (*s)
-		{
-			write(1, s, 1);
-			s++;
-		}
+	{
+		write(1, s, 1);
+		s++;
+	}
 }
 /*
 int main()

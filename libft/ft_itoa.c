@@ -10,52 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <limits.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-int	num_len(int num)
+static	int num_len(int num)
 {
 	int pos;
 
 	pos = 0;
-	if(num < 0)
+	if (num < 0)
 	{
-		if(num == INT_MIN)
+		if (num == INT_MIN)
 		{
-			num = num/10;
+			num = num / 10;
 			pos++;
 		}
 		num = num * -1;
 		pos++;
 	}
-	while(num > 9)
+	while (num > 9)
 	{
-		num = num/10;
+		num = num / 10;
 		pos++;
 	}
 	pos++;
 	return (pos);
 }
+
 char	*ft_itoa(int n)
 {
-	char *result;
-	int len;
+	char	*result;
+	int		len;
 	
 	len = num_len(n);
 	result = malloc((len + 1 )*sizeof(char));
 	if(!result)
-		return NULL;
-	if(n < 0)
+		return (NULL);
+	if (n < 0)
 	{
-		if(n == INT_MIN)
-			return("-2147483648");
+		if (n == INT_MIN)
+			return ("-2147483648");
 		n = n * -1;
 		result[0] = '-';
 		
 	}
-	while(n > 9)
+	while (n > 9)
 	{
 		result[len - 1] = n % 10 + '0';
 		n = n / 10;
