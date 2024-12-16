@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cralarco <cralarco@student.42london.com>  +#+  +:+       +#+        */
+/*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:26:31 by cralarco          #+#    #+#             */
 /*   Updated: 2024/11/29 19:09:50 by cralarco         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cralarco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:09:53 by cralarco          #+#    #+#             */
 /*   Updated: 2024/12/09 12:40:15 by cralarco         ###   ########.fr       */

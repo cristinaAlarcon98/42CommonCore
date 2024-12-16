@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cralarco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:38 by cralarco          #+#    #+#             */
 /*   Updated: 2024/12/09 12:40:51 by cralarco         ###   ########.fr       */

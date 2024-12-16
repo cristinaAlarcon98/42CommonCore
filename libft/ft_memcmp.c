@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cralarco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:28:19 by cralarco          #+#    #+#             */
 /*   Updated: 2024/12/06 18:49:28 by cralarco         ###   ########.fr       */
