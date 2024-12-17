@@ -15,10 +15,10 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char		*buffdest;
-	const char	*buffsrc;
+	char	*buffsrc;
 
 	buffdest = (char *)dest;
-	buffsrc = (const char *)src;
+	buffsrc = (char *)src;
 	while (n > 0)
 	{
 		*buffdest = *(char *)buffsrc;
