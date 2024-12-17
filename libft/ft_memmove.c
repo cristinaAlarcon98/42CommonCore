@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:23:59 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/29 19:24:51 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:20:07 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*buffer1;
 	char	*buffer2;
 
-	buffer1 = (void *)src;
-	buffer2 = (void *)dest;
+	buffer1 = (char *)src;
+	buffer2 = (char *)dest;
 	if (buffer1 >= buffer2)
 	{
 		i = 0;
@@ -40,6 +40,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i--;
 		}
 	}
+	return (buffer2);
 }
 
 /*

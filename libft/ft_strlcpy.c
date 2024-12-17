@@ -6,12 +6,10 @@
 /*   By: cralarco <cralarco@strudent.42london.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:04:52 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/02 19:26:19 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:42:05 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

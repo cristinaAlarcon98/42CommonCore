@@ -6,25 +6,14 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:09:53 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/09 12:40:15 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:36:32 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-int	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (s[length] != 0)
-	{
-		length++;
-	}
-	return (length);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -35,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	*new_str = malloc(s1_len + s2_len + 1);
+	new_str = malloc(s1_len + s2_len + 1);
 	i = 0;
 	while (*s1)
 	{

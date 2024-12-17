@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:38 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/09 12:40:51 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:37:20 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	substr = malloc(len + 1);
@@ -43,4 +43,3 @@ int main()
 
 }
 */
-

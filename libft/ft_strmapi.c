@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:26:31 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/29 19:09:50 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:35:25 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,24 @@
 #include <stdlib.h>
 #include "libft.h"
 
-
-
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	char *result;
+	int		i;
+	char	*result;
 
 	if (!s || !f)
-        return (0);
+		return (0);
 	result = malloc(ft_strlen(s) + 1);
 	if (!result)
 		return (NULL);
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		result[i] = f(i,s[i]);
+		result[i] = f(i, s[i]);
 		i++;
 	}
 	result[i] = '\0';
-	return(result);
+	return (result);
 }
 
 /*

@@ -1,4 +1,0 @@
-Commands to remember:
-
- % gcc ft_strlcpy.c main.c strlcpy_test.c  -lbsd
-

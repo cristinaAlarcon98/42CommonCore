@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:50:30 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/12 20:10:53 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:29:17 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,88 +15,86 @@
 #include "libft.h"
 #include <unistd.h>
 
-int	count_words(char const *str, char delimiter)
+int	count_words(char const *str, char del)
 {
-    int counter;
-    int i;
-    int word_flag; 
+	size_t	word_count;
 
-    counter = 0;
-    i = 0;
-    word_flag = 0;
-    while (*str)
-    {
-        if((*str == delimiter || *str == '\0')  && word_flag == 1)
-        {
-            counter++;
-            word_flag = 0;
-        }
-        else if(str[i] != delimiter && word_flag == 0)
-            word_flag = 1;
-        str++;
-	  }
-    if (word_flag)
-        counter++;
-    return counter;
+	word_count = 0;
+	while (*str)
+	{
+		if (*str != del)
+		{
+			word_count += 1;
+			while (*str != del && *str != '\0')
+				str++;
+		}
+		if (*str)
+			str++;
+	}
+	return (word_count);
 }
 
-static  void copy_text_in_result(char const *str, int start, int end,char **result)
+static	void	copy_text(char const *str, int start, int end, char **result)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(result[i])
-        i++;
-    result[i] = malloc(sizeof(char) * (end - start + 2));
-    ft_strlcpy(result[i], &str[start], end - start + 1);
+	i = 0;
+	while (result[i])
+		i++;
+	result[i] = malloc(sizeof(char) * (end - start + 1));
+	if (result[i] == NULL)
+		return ;
+	ft_strlcpy(result[i], &str[start], end - start + 1);
 }
 
-
-char **ft_split(char const *s, char c)
+static	void	process_word(char **result, char const *s, char c)
 {
-    char **result;
-    size_t start;
-    int words_number;
-    int word_flag;
-    int index;
-    
+	size_t	start;
+	int		word_flag;
+	int		index;
 
-    start = 0;
-    if(!s)
-        return (NULL);
-    words_number = count_words(s, c);
-    result = ft_calloc( (words_number + 1), sizeof(char *));
-
-    index = 0;
-    word_flag = 0;
-    while(s[index])
-    {
-        if(s[index] == c && word_flag == 1)
-        {
-            copy_text_in_result(s, start, index, result);
-            word_flag = 0;
-        }
-        else if(s[index] != c && word_flag==0)
-        {
-            word_flag = 1;
-            start = index;
-        }
-        index++;
-		
-    }
-    if(s[index] == '\0')
-	    copy_text_in_result(s, start, index, result);
-    return result;
-
+	start = 0;
+	index = 0;
+	word_flag = 0;
+	while (s[index])
+	{
+		if (s[index] == c && s[index + 1] != '\0' && word_flag == 1)
+		{
+			copy_text(s, start, index, result);
+			word_flag = 0;
+		}
+		else if (s[index] != c && word_flag == 0)
+		{
+			word_flag = 1;
+			start = index;
+		}
+		index++;
+	}
+	if (s[index] == '\0')
+		copy_text(s, start, index, result);
 }
 
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		words_number;
+
+	if (!s)
+		return (NULL);
+	words_number = count_words(s, c);
+	result = ft_calloc((words_number + 1), sizeof(char *));
+	process_word(result, s, c);
+	return (result);
+}
+/*
 int main()
 {
-    char const *s = " cristina  banana     cafe";
+    char const *s = " cristina  banana  cafe ";
     char **result;
     int i = 0;
 
     result = ft_split(s, ' ');
+    printf("Number of words: %u\n", count_words(s, ' '));
     while(result[i])
     {
         printf("%s\n", result[i]);
@@ -105,13 +103,5 @@ int main()
 
     }    
     free(result);
-    /*
-    printf("%s\n", result[0]);
-    printf("%s\n", result[1]);
-    printf("%s\n", result[2]);
-    */
-
-
-
 }
-
+*/

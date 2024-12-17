@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 19:40:57 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/09 11:34:21 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:28:40 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>	
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	while (*s)
-		{
-			write(1, s, 1);
-			s++;
-		}
+	{
+		write(fd, s, 1);
+		s++;
+	}
 	write(1, "\n", 1);
 }
 /*

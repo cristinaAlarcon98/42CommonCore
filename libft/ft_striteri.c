@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:54:28 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/27 17:57:56 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:40:50 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@
 void	ft_striteri(char *s, char (*f)(unsigned int, char*))
 {
 	int	i;
-	char *result;
 
 	if (!s || !f)
-        return ;
-	
+		return ;
 	i = 0;
-	while(s[i])	
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;
 	}
 }
-
-

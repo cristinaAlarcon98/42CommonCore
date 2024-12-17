@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*pointer;
-	int		total_size;
+	size_t	total_size;
 
-	total_size = count * size;
+	
+	if (size && nmemb  >= SIZE_MAX / size)
+		return (NULL); 
+	total_size = nmemb * size;
 	pointer = malloc(total_size);
 	if (pointer == NULL)
 		return (NULL);

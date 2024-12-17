@@ -6,18 +6,16 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 19:40:57 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/28 20:04:16 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 11:56:30 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
-
 
 void	ft_bzero(void *s, size_t n)
 {
 	char	*string;
-	size_t		i;
+	size_t	i;
 
 	string = (void *)s;
 	i = 0;

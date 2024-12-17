@@ -6,24 +6,22 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:08:25 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/03 20:15:31 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:40:27 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	counter;
-	int		dest_len;
+	size_t	dest_len;
 
 	dest_len = ft_strlen(dst);
 	counter = 0;
 	if (dest_len >= size)
 	{
-		return (strlen(src) + size);
+		return (ft_strlen(src) + size);
 	}
 	while (counter < size - dest_len - 1 && src[counter] != '\0')
 	{
@@ -33,7 +31,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dest_len + counter] = 0;
 	return (ft_strlen(src) + dest_len);
 }
-
 /*
 int main(void)
 {
@@ -46,4 +43,5 @@ int main(void)
     normal_strlcat = strlcat(dst, src, 1);
     printf("Normal strlcat: %zu\n", normal_strlcat);
     printf("dst: %s\n", dst);
-}*/
+}
+*/

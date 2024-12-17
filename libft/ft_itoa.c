@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:50:30 by cralarco          #+#    #+#             */
-/*   Updated: 2024/11/26 16:34:52 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:34:02 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static	int num_len(int num)
+static	int	num_len(int num)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	if (num < 0)
@@ -42,18 +42,17 @@ char	*ft_itoa(int n)
 {
 	char	*result;
 	int		len;
-	
+
 	len = num_len(n);
-	result = malloc((len + 1 )*sizeof(char));
-	if(!result)
+	result = malloc((len + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
 	if (n < 0)
 	{
 		if (n == INT_MIN)
 			return ("-2147483648");
-		n = n * -1;
+		n *= -1;
 		result[0] = '-';
-		
 	}
 	while (n > 9)
 	{
@@ -63,7 +62,6 @@ char	*ft_itoa(int n)
 	}
 	result[len - 1] = n + '0';
 	return (result);
-
 }
 
 /*
