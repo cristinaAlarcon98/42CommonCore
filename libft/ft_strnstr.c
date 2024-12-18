@@ -6,59 +6,56 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:52:40 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/09 12:31:54 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:24:47 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
+static int check_rest_of_str(const char *big,const char *little)
 {
-	int	length;
-
-	length = 0;
-	while (s[length] != 0)
+	while(*little != '\0')
 	{
-		length++;
+		if(*little != *big)
+			return (0);
+		big++;
+		little++;
 	}
-	return (length);
+	return (1);
 }
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{	size_t little_len;
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	char	*pointer;
-
-	if (ft_strlen(needle) == 0)
-		return ((char *)haystack);
-	while (len > 0)
+	little_len = ft_strlen(little);
+	if (little_len == 0)
+		return ((char *)big);
+	
+	
+	while (len >= little_len && *big)
 	{
-		pointer = (char *)needle;
-		while (*pointer)
+		
+		if (*big == *little)
 		{
-			if (*haystack == *pointer)
-				return ((char *)haystack);
-			pointer++;
+			if(check_rest_of_str(big, little))
+				return ((char *)big);
 		}
-		haystack++;
+		big++;
 		len--;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*
 int main(){
-    const char *h1 = "hello";
-    const char *n1 = "rrrr";
+	
+	char big[30] = "aaabcabdc";
+	char little[10] = "aabc";
+	char * empty = "";
 
-    const char *h2 = "hello";
-    const char *n2 = "ert";
 
 	
-		printf("%s\n",  ft_strnstr(h1,n1,4));
+		printf("%s\n",  ft_strnstr(big, "cd", 8) );
 
-	
 
 //    printf("%s\n",  strnstr(h2,n2,3));
-}
-*/
+} */
