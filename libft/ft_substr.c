@@ -10,19 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
+	size_t size_len;
 
-	i = 0;
+	if(!s)
+		return (NULL);
+	size_len = ft_strlen(s);
+	if (start >= size_len)
+		return (ft_strdup(""));
+	if (start + len > size_len)
+		len = size_len - start;
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
+	
+	i = 0;
 	while (i < len)
 	{
 		substr[i] = s[start + i];
@@ -36,8 +43,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int main()
 {
     char const *s = "hola soy cristina";
-    printf("%s\n", ft_substr(s, 9, 8));
-    printf("%c\n", s[16]);
+    printf("%s\n", ft_substr(s, 20, 10));
+   // printf("%c\n", s[16]);
 
 
 

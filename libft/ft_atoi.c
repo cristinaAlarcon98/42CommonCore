@@ -6,28 +6,35 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 19:40:57 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/09 12:19:13 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:15:13 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
+
+static	int	is_space(char str)
+{
+	if (str == '\t' || str == '\n' || str == '\t' || str == '\v'
+		|| str == '\f' || str == '\r' || str == ' ')
+	{
+		return (1);
+	}
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
-	int	counter;
+	int	negative;
 	int	number;
 
-	counter = 0;
+	negative = 0;
 	number = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\t' || *str == '\v'
-		|| *str == '\f' || *str == '\r' || *str == ' ')
-	{
+	while (is_space(*str))
 		str++;
-	}
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
-			counter++;
+			negative = 1;
 		str++;
 	}
 	while (*str >= 48 && *str <= 57)
@@ -36,7 +43,7 @@ int	ft_atoi(const char *str)
 		number += *str - 48;
 		str++;
 	}
-	if (counter % 2 != 0)
+	if (negative)
 		number *= -1;
 	return (number);
 }
@@ -44,8 +51,12 @@ int	ft_atoi(const char *str)
 int main()
 {
 
-    const char *str = "   +-+-+-234gf5";
-
-    printf("%d\n", ft_atoi(str));
+     printf("%d\n", ft_atoi(" ---+--+1234ab567"));  // Should print -1234
+    printf("%d\n", ft_atoi("   -+42"));            // Should print 42
+    printf("%d\n", ft_atoi("  +---+42ab567"));      // Should print 42
+    printf("%d\n", ft_atoi("42abc"));               // Should print 42
+    printf("%d\n", ft_atoi("+-42"));                // Should print 0
+    printf("%d\n", ft_atoi("  -+--12345"));         // Should print -12345
+    return 0;
 }
 */

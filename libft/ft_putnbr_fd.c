@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>	
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -20,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	num = n;
 	if (num < 0)
 	{
-		ft_putchar_fd(1, '-');
+		ft_putchar_fd('-', fd);
 		num = -num;
 	}
 	if (num >= 10)

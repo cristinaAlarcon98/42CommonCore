@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
-#include <unistd.h>
 
 int	count_words(char const *str, char del)
 {
@@ -93,7 +90,7 @@ int main()
     char **result;
     int i = 0;
 
-    result = ft_split(s, ' ');
+    result = ft_split(s, 'd');
     printf("Number of words: %u\n", count_words(s, ' '));
     while(result[i])
     {
@@ -104,4 +101,5 @@ int main()
     }    
     free(result);
 }
+
 */

@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+
 
 static	int	num_len(int num)
 {
