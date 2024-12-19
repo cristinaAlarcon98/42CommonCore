@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:09:58 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/11 14:54:25 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:15:07 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 /*
 int main(){
-  char const *s1 = "cdcdHolacdc";
-  char const *set = "cdcd";
+  char const *s1 = "Hola";
+  char const *set = "t";
   
   printf("%s\n",ft_strtrim(s1,set));
 }
