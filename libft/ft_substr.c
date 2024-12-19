@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:38 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/17 12:37:20 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 13:12:37 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
-	size_t size_len;
+	size_t	size_len;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	size_len = ft_strlen(s);
 	if (start >= size_len)
@@ -28,7 +28,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	
 	i = 0;
 	while (i < len)
 	{

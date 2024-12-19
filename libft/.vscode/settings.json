@@ -1,6 +1,17 @@
 {
     "files.associations": {
         "libft.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "functional": "c",
+        "array": "c",
+        "deque": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "ranges": "c",
+        "span": "c"
     }
 }

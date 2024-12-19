@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:32:41 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/17 12:30:06 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:22:11 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <limits.h>
 # include <unistd.h>	
 
-
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isdigit(int c);
@@ -29,7 +28,7 @@ void	ft_bzero(void *s, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *str);
-size_t		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, int n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_isprint(int c);

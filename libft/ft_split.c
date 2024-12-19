@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:50:30 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/17 17:29:17 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:32:29 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,66 +31,68 @@ int	count_words(char const *str, char del)
 	return (word_count);
 }
 
-static	void	copy_text(char const *str, int start, int end, char **result)
+static void	copy_text(char *start, char *end, char **result, int *current_word)
 {
-	int	i;
-
-	i = 0;
-	while (result[i])
-		i++;
-	result[i] = malloc(sizeof(char) * (end - start + 1));
-	if (result[i] == NULL)
-		return ;
-	ft_strlcpy(result[i], &str[start], end - start + 1);
+	if (result[*current_word] == NULL)
+	{
+		result[*current_word] = malloc(sizeof(char) * (end - start + 1));
+		if (result[*current_word] == NULL)
+			return ;
+	}
+	ft_strlcpy(result[*current_word], start, end - start + 1);
+	(*current_word)++;
 }
 
-static	void	process_word(char **result, char const *s, char c)
+static void	process_word(char **result, char const *s, char c)
 {
 	size_t	start;
-	int		word_flag;
-	int		index;
+	int		flag;
+	int		i;
+	int		current_w;
 
 	start = 0;
-	index = 0;
-	word_flag = 0;
-	while (s[index])
+	i = 0;
+	flag = 0;
+	current_w = 0;
+	while (s[i])
 	{
-		if (s[index] == c && s[index + 1] != '\0' && word_flag == 1)
+		if (s[i] == c && (s[i + 1] != '\0' || s[i + 1] != c) && flag == 1)
 		{
-			copy_text(s, start, index, result);
-			word_flag = 0;
+			copy_text((char *)(s + start), (char *)(s + i), result, &current_w);
+			flag = 0;
 		}
-		else if (s[index] != c && word_flag == 0)
+		else if (s[i] != c && flag == 0)
 		{
-			word_flag = 1;
-			start = index;
+			flag = 1;
+			start = i;
 		}
-		index++;
+		i++;
 	}
-	if (s[index] == '\0')
-		copy_text(s, start, index, result);
+	if (s[i] == '\0' && flag == 1)
+		copy_text((char *)(s + start), (char *)(s + i), result, &current_w);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int		words_number;
 
 	if (!s)
 		return (NULL);
-	words_number = count_words(s, c);
-	result = ft_calloc((words_number + 1), sizeof(char *));
+	result = ft_calloc((count_words(s, c) + 1), sizeof(char *));
+	if (!result)
+		return (NULL);
 	process_word(result, s, c);
+	result[count_words(s, c)] = NULL;
 	return (result);
 }
 /*
 int main()
 {
-    char const *s = " cristina  banana  cafe ";
+    char const *s = "cristina8";
     char **result;
     int i = 0;
 
-    result = ft_split(s, 'd');
+    result = ft_split(s, '8');
     printf("Number of words: %u\n", count_words(s, ' '));
     while(result[i])
     {
@@ -101,5 +103,4 @@ int main()
     }    
     free(result);
 }
-
 */

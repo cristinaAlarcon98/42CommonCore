@@ -6,12 +6,11 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:32:00 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/06 13:05:40 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:27:56 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strrchr(const char *s, int c)
 {

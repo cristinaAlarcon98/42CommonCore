@@ -6,7 +6,7 @@
 /*   By: cralarco <cralarco@student.42londonfr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:38 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/17 12:37:58 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:28:30 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return(0);
+	return (0);
 }
 /*
 int main(){

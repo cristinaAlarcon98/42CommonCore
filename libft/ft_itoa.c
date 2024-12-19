@@ -6,12 +6,11 @@
 /*   By: cralarco <cralarco@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:50:30 by cralarco          #+#    #+#             */
-/*   Updated: 2024/12/17 16:34:02 by cralarco         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:21:04 by cralarco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static	int	num_len(int num)
 {
@@ -25,7 +24,7 @@ static	int	num_len(int num)
 			num = num / 10;
 			pos++;
 		}
-		num = num * -1;
+		num *= -1;
 		pos++;
 	}
 	while (num > 9)
@@ -46,10 +45,13 @@ char	*ft_itoa(int n)
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
+	if (n == INT_MIN)
+	{
+		return (ft_memcpy(result, "-2147483648", 12));
+	}
+	result[len] = '\0';
 	if (n < 0)
 	{
-		if (n == INT_MIN)
-			return ("-2147483648");
 		n *= -1;
 		result[0] = '-';
 	}
@@ -77,4 +79,5 @@ int	main()
 	printf("%s\n", ft_itoa(5000));
 
 }
+
 */
